@@ -4,6 +4,7 @@ contract DonationFactory {
     address[] public deployedDonations;
 
     function createDonation(address vender, uint value, string prod) public {
+        require(vender != msg.sender);
         address newDonation = new Donation(msg.sender, vender, value, prod);
         deployedDonations.push(newDonation);
     }
@@ -58,9 +59,8 @@ contract Donation {
         requests[idx].recipient.transfer(this.balance);
     }
 
-    function checkTheBalance() public view returns(uint){
-        return this.balance;
+    function getContribution(address person) public view returns (uint) {
+        return donators[person];
     }
-
 
 }
