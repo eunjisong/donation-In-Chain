@@ -209,5 +209,6 @@ describe('Donation', () => {
         afterSendingMoney = web3.utils.fromWei(afterSendingMoney, 'ether')
         console.log("HIIIIII", initialBal, afterSendingMoney)
         assert(+afterSendingMoney > 104);
+        assert.equal(donation.options.address, donationAddress)
     })
 })
