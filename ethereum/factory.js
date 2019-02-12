@@ -5,6 +5,6 @@
 
 import web3 from './web3';
 import DonationFactory from './build/DonationFactory.json';
-const factory = new web3.eth.Contract(JSON.parse(DonationFactory.interface), '0x8094743DcAB9e738cF1E272e0756CaDBe31F787E');
+const factory = new web3.eth.Contract(JSON.parse(DonationFactory.interface), '0x536d2ABac689F9111140C20567eD75293058D8d8');
 
 export default factory
