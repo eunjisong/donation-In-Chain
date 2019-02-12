@@ -24,6 +24,7 @@ contract Donation {
 
     address public requester;
     uint public donatorsCount;
+    uint public remaining;
     string public status;
     Request[] public requests;
     mapping(address => uint) donators;
@@ -33,6 +34,7 @@ contract Donation {
         Request memory newRequest = Request({ recipient: vender, targetAmount: value, product: prod });
         requests.push(newRequest);
         status = "pending";
+        remaining = value;
     }
 
     function donate(uint idx) public payable {
@@ -45,11 +47,13 @@ contract Donation {
 
         if(donators[msg.sender] == 0){
             donators[msg.sender] = msg.value;
+
             donatorsCount++;
         } else {
             donators[msg.sender] += msg.value;
 
         }
+        remaining -= msg.value;
     }
 
     function complete(uint idx) public {
