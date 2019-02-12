@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ethereum/Donation.test.js",
-    "dev": "next dev front-end/"
+    "dev": "next dev client/"
   },
   "author": "",
   "license": "ISC",
