@@ -1,10 +1,8 @@
 const routes = require('next-routes')();
 
 routes
-  .add('/donations/new', '/donations/new')
-
-
-const routes = require('next-routes')();
+  .add('/donations/new', '/donations/DonationForm')
+  .add('/donations/:address', 'donations/SingleDonation');
 
 
 // routes
