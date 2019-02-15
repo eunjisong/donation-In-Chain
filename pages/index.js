@@ -1,5 +1,6 @@
 import React from "react";
 import factory from "../ethereum/factory.js";
+import donation from '../ethereum/donation.js';
 import { Card, Button } from 'semantic-ui-react';
 import Layout from '../component/Layout';
 import { Link } from '../routes';
@@ -10,18 +11,27 @@ import { Link } from '../routes';
 
 class AllDonations extends React.Component {
   static async getInitialProps(props) {
-    const donations = await factory.methods.getDeployedDonations().call();
-    return { donations };
+    const donationsAddresses = await factory.methods.getDeployedDonations().call();
+
+    const donationsInstances = await Promise.all(
+      Array(donationsAddresses.length)
+        .fill()
+        .map( (ele, idx) => new donation(donationsAddresses[idx]))
+        )
+
+
+    return { donationsAddresses,  donationsInstances };
+
   }
 
   donationsList(){
-    const items = this.props.donations.map( (donation, id) => {
-
+    const items = this.props.donationsInstances.map( async (donation, id) => {
+      const theDonation = await donation.methods.requests(0).call()
       return {
-        href: `/donations/${donation}`,
+        href: `/donations/${donation.options.address}`,
         image: `/static/${id}.png`,
-        header: "here",
-        description: donation,
+        header: theDonation.description,
+        description: theDonation.description,
         fluid: true,
       }
     })
@@ -29,14 +39,14 @@ class AllDonations extends React.Component {
   }
 
   render() {
-    const { donations } = this.props;
-    console.log(donations);
+    const { donationsAddresses, donationsInstances  } = this.props;
+
     return (
       <Layout >
       <div>
           {this.donationsList()}
           <Link route={`/donations/new`}><a><Button>new</Button></a></Link>
-          <div><Link route={`/donations/${donations[0]}`}><a><Button>Go to one</Button></a></Link></div>
+          <div><Link route={`/donations/${donationsAddresses[0]}`}><a><Button>Go to one</Button></a></Link></div>
       </div>
       </Layout>
     );
