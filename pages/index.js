@@ -24,14 +24,18 @@ class AllDonations extends React.Component {
 
   }
 
+  async donationDetail(){
+   const {donationsInstances} = this.props;
+   donationsInstances.methods.requests(0).call();
+  }
+
   donationsList(){
-    const items = this.props.donationsInstances.map( async (donation, id) => {
-      const theDonation = await donation.methods.requests(0).call()
+    const items = this.props.donationsInstances.map( (donation, id) => {
       return {
         href: `/donations/${donation.options.address}`,
         image: `/static/${id}.png`,
-        header: theDonation.description,
-        description: theDonation.description,
+        header: 'description,',
+        description: donation.options.address,
         fluid: true,
       }
     })

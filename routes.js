@@ -2,6 +2,8 @@ const routes = require('next-routes')();
 
 routes
   .add('/donations/new', '/donations/DonationForm')
+  .add('/donations/inprocess', '/donations/InProcess')
+  .add('/donations/completed', '/donations/Completed')
   .add('/donations/:address', 'donations/SingleDonation');
 
 
