@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default () => {
-  return(
+export default class SingleDonation extends React.Component {
+render(){  return(
     <div>single donation page</div>
-  )
+  )}
 }

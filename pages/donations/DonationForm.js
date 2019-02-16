@@ -1,8 +1,5 @@
-import React from 'react';
-
+import React from "react";
 
 export default () => {
-  return(
-    <div>new form</div>
-  )
-}
+  return <div>new form</div>;
+};
