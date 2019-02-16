@@ -1,16 +1,6 @@
 import React from "react";
-import { Link } from "../routes";
+import Layout from '../component/Layout'
 
-export default class MyPage extends React.Component {
-
-
-  render() {
-    return (
-      <div>
-        <Link route="/donations/new">
-          <a>New</a>
-        </Link>
-      </div>
-    );
-  }
-}
+export default () => {
+  return <Layout><div>My Page</div></Layout>
+};

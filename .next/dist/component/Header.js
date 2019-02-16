@@ -51,9 +51,10 @@ var Header = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: "DonationInChain" }, _this.handleClick = function (e, _ref2) {
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: '' }, _this.handleClick = function (e, _ref2) {
       var name = _ref2.name;
 
+      if (name !== 'MyPage' || name !== 'index') _routes.Router.pushRoute("/donations/" + name);
       _this.setState({ activeItem: name });
     }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
@@ -63,40 +64,40 @@ var Header = function (_React$Component) {
     value: function render() {
       var activeItem = this.state.activeItem;
 
+      console.log(this.props);
       return _react2.default.createElement(_semanticUiReact.Menu, { pointing: true, secondary: true, style: { marginTop: "30px" }, __source: {
-          fileName: _jsxFileName,
-          lineNumber: 15
-        }
-      }, _react2.default.createElement(_semanticUiReact.Menu.Item, {
-        href: "/",
-        name: "DonationInChain",
-        active: activeItem === "DonationInChain",
-        onClick: this.handleClick,
-        __source: {
           fileName: _jsxFileName,
           lineNumber: 17
         }
-      }, "Donation In Chain"), _react2.default.createElement(_semanticUiReact.Menu.Item, {
-        href: "/donations/inprocess",
-        name: "InProcess",
-        active: activeItem === "InProcess",
+      }, _react2.default.createElement(_semanticUiReact.Menu.Item, {
+        href: "/",
+        name: "index",
+        active: activeItem === "index",
         onClick: this.handleClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 19
         }
-      }, "In Process"), _react2.default.createElement(_semanticUiReact.Menu.Item, {
-        href: "/donations/completed",
+      }, "Donation In Chain"), _react2.default.createElement(_semanticUiReact.Menu.Item, {
+        name: "inprogress",
+        active: activeItem === "inprogress",
+        onClick: this.handleClick,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        }
+      }, "In Progress"), _react2.default.createElement(_semanticUiReact.Menu.Item, {
+
         name: "completed",
         active: activeItem === "completed",
         onClick: this.handleClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 36
         }
       }, "Completed"), _react2.default.createElement(_semanticUiReact.Menu.Menu, { position: "right", __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         }
       }, _react2.default.createElement(_semanticUiReact.Menu.Item, {
         name: "MyPage",
@@ -105,7 +106,7 @@ var Header = function (_React$Component) {
         onClick: this.handleClick,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 46
         }
       }, "My Page")));
     }
@@ -115,4 +116,4 @@ var Header = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Header;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudC9IZWFkZXIuanMiXSwibmFtZXMiOlsiUmVhY3QiLCJNZW51IiwiU2VnbWVudCIsIkxpbmsiLCJIZWFkZXIiLCJzdGF0ZSIsImFjdGl2ZUl0ZW0iLCJoYW5kbGVDbGljayIsImUiLCJuYW1lIiwic2V0U3RhdGUiLCJtYXJnaW5Ub3AiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBTzs7OztBQUNQLEFBQVMsQUFBTTs7QUFDZixBQUFRLEFBQVc7Ozs7Ozs7SUFFRSxBOzs7Ozs7Ozs7Ozs7Ozs0TSxBQUNuQixRQUFRLEVBQUUsWUFBRixBLEFBQWMsMkJBRXRCLEEsY0FBYyxVQUFBLEFBQUMsVUFBZ0I7VUFBWCxBQUFXLGFBQVgsQUFBVyxBQUM3Qjs7WUFBQSxBQUFLLFNBQVMsRUFBRSxZQUFoQixBQUFjLEFBQWMsQUFFN0I7QTs7Ozs7NkJBQ1E7VUFBQSxBQUNDLGFBQWUsS0FEaEIsQUFDcUIsTUFEckIsQUFDQyxBQUNSOzs2QkFDRSxBQUFDLHVDQUFLLFVBQU4sTUFBZSxXQUFmLE1BQXlCLE9BQU8sRUFBRSxXQUFsQyxBQUFnQyxBQUFhO29CQUE3QztzQkFBQSxBQUVFO0FBRkY7T0FBQSxrQkFFRyxjQUFELHNCQUFBLEFBQU07Y0FBTixBQUNPLEFBQ0w7Y0FGRixBQUVPLEFBQ0w7Z0JBQVEsZUFIVixBQUd5QixBQUN2QjtpQkFBUyxLQUpYLEFBSWdCOztvQkFKaEI7c0JBQUE7QUFBQTtBQUNFLFNBSEosQUFFRSxBQVNBLHNDQUFDLGNBQUQsc0JBQUEsQUFBTTtjQUFOLEFBQ08sQUFDTDtjQUZGLEFBRU8sQUFDTDtnQkFBUSxlQUhWLEFBR3lCLEFBQ3ZCO2lCQUFTLEtBSlgsQUFJZ0I7O29CQUpoQjtzQkFBQTtBQUFBO0FBQ0UsU0FaSixBQVdFLEFBU0EsK0JBQUMsY0FBRCxzQkFBQSxBQUFNO2NBQU4sQUFDTyxBQUNMO2NBRkYsQUFFTyxBQUNMO2dCQUFRLGVBSFYsQUFHeUIsQUFDdkI7aUJBQVMsS0FKWCxBQUlnQjs7b0JBSmhCO3NCQUFBO0FBQUE7QUFDRSxTQXJCSixBQW9CRSxBQVNBLDhCQUFDLGNBQUQsc0JBQUEsQUFBTSxRQUFLLFVBQVgsQUFBb0I7b0JBQXBCO3NCQUFBLEFBQ0E7QUFEQTt5QkFDQyxjQUFELHNCQUFBLEFBQU07Y0FBTixBQUNPLEFBQ0w7Y0FGRixBQUVPLEFBQ0w7Z0JBQVEsZUFIVixBQUd5QixBQUN2QjtpQkFBUyxLQUpYLEFBSWdCOztvQkFKaEI7c0JBQUE7QUFBQTtBQUNFLFNBaENOLEFBQ0UsQUE2QkUsQUFDQSxBQWFMOzs7OztFQXJEaUMsZ0JBQU0sQTs7a0JBQXJCLEEiLCJmaWxlIjoiSGVhZGVyLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9ldW5qaXNvbmcvRG9jdW1lbnRzL3Byb2plY3QvZG9uYXRpb24taW4tY2hhaW4ifQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudC9IZWFkZXIuanMiXSwibmFtZXMiOlsiUmVhY3QiLCJNZW51IiwiU2VnbWVudCIsIkxpbmsiLCJSb3V0ZXIiLCJIZWFkZXIiLCJzdGF0ZSIsImFjdGl2ZUl0ZW0iLCJoYW5kbGVDbGljayIsImUiLCJuYW1lIiwicHVzaFJvdXRlIiwic2V0U3RhdGUiLCJjb25zb2xlIiwibG9nIiwicHJvcHMiLCJtYXJnaW5Ub3AiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBTzs7OztBQUNQLEFBQVMsQUFBTTs7QUFDZixBQUFRLEFBQU0sQUFBYTs7Ozs7OztJLEFBR047Ozs7Ozs7Ozs7Ozs7OzRNLEFBQ25CLFFBQVEsRUFBRSxZLEFBQUYsQUFBYyxZQUV0QixBLGNBQWMsVUFBQSxBQUFDLFVBQWdCO1VBQVgsQUFBVyxhQUFYLEFBQVcsQUFDN0I7O1VBQUcsU0FBQSxBQUFTLFlBQVksU0FBeEIsQUFBaUMsU0FBVSxlQUFBLEFBQU8sMEJBQVAsQUFBK0IsQUFDMUU7WUFBQSxBQUFLLFNBQVMsRUFBRSxZQUFoQixBQUFjLEFBQWMsQUFDN0I7QTs7Ozs7NkJBQ1E7VUFBQSxBQUNDLGFBQWUsS0FEaEIsQUFDcUIsTUFEckIsQUFDQyxBQUNSOztjQUFBLEFBQVEsSUFBSSxLQUFaLEFBQWlCLEFBQ2pCOzZCQUNFLEFBQUMsdUNBQUssVUFBTixNQUFlLFdBQWYsTUFBeUIsT0FBTyxFQUFFLFdBQWxDLEFBQWdDLEFBQWE7b0JBQTdDO3NCQUFBLEFBRUU7QUFGRjtPQUFBLGtCQUVHLGNBQUQsc0JBQUEsQUFBTTtjQUFOLEFBQ08sQUFDTDtjQUZGLEFBRU8sQUFDTDtnQkFBUSxlQUhWLEFBR3lCLEFBQ3ZCO2lCQUFTLEtBSlgsQUFJZ0I7O29CQUpoQjtzQkFBQTtBQUFBO0FBQ0UsU0FISixBQUVFLEFBU0Esc0NBQUMsY0FBRCxzQkFBQSxBQUFNO2NBQU4sQUFDTyxBQUNMO2dCQUFRLGVBRlYsQUFFeUIsQUFDdkI7aUJBQVMsS0FIWCxBQUdnQjs7b0JBSGhCO3NCQUFBO0FBQUE7QUFDRSxTQVpKLEFBV0UsQUFRQSxnQ0FBQyxjQUFELHNCQUFBLEFBQU07O2NBQU4sQUFFTyxBQUNMO2dCQUFRLGVBSFYsQUFHeUIsQUFDdkI7aUJBQVMsS0FKWCxBQUlnQjs7b0JBSmhCO3NCQUFBO0FBQUE7QUFFRSxTQXJCSixBQW1CRSxBQVNBLDhCQUFDLGNBQUQsc0JBQUEsQUFBTSxRQUFLLFVBQVgsQUFBb0I7b0JBQXBCO3NCQUFBLEFBQ0E7QUFEQTt5QkFDQyxjQUFELHNCQUFBLEFBQU07Y0FBTixBQUNPLEFBQ0w7Y0FGRixBQUVPLEFBQ0w7Z0JBQVEsZUFIVixBQUd5QixBQUN2QjtpQkFBUyxLQUpYLEFBSWdCOztvQkFKaEI7c0JBQUE7QUFBQTtBQUNFLFNBL0JOLEFBQ0UsQUE0QkUsQUFDQSxBQWFMOzs7OztFQXJEaUMsZ0JBQU0sQTs7a0JBQXJCLEEiLCJmaWxlIjoiSGVhZGVyLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9ldW5qaXNvbmcvRG9jdW1lbnRzL3Byb2plY3QvZG9uYXRpb24taW4tY2hhaW4ifQ==

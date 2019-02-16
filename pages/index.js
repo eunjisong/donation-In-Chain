@@ -3,7 +3,7 @@ import factory from "../ethereum/factory.js";
 import donation from '../ethereum/donation.js';
 import { Card, Button } from 'semantic-ui-react';
 import Layout from '../component/Layout';
-import { Link } from '../routes';
+import { Link, Router } from '../routes';
 
 // factory: 0x536d2ABac689F9111140C20567eD75293058D8d8
 // donation [0x2c1A1E40c84aeAc83Eb0d8fC341D517569bc509e,0xaB5a52Aa77eDfc2C698a7059A5833B9fD457Acf8,0xB7e6B1C36565cf1691DfED8d9e5443D09Bd70B37,0xA8DeA73C0C1EF45F729bf10bfC4d4f64975c7993
@@ -32,11 +32,11 @@ class AllDonations extends React.Component {
   donationsList(){
     const items = this.props.donationsInstances.map( (donation, id) => {
       return {
-        href: `/donations/${donation.options.address}`,
         image: `/static/${id}.png`,
         header: 'description,',
         description: donation.options.address,
         fluid: true,
+        onClick: () => Router.pushRoute(`/donations/${donation.options.address}`)
       }
     })
     return <Card.Group centered itemsPerRow={3} items={items}/>

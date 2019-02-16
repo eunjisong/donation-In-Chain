@@ -1,39 +1,40 @@
 import React from "react";
 import { Menu, Segment } from "semantic-ui-react";
-import {Link} from '../routes'
+import {Link, Router} from '../routes'
+
 
 export default class Header extends React.Component {
-  state = { activeItem: "DonationInChain" };
+  state = { activeItem: '' };
 
   handleClick = (e, { name }) => {
-    this.setState({ activeItem: name });
-
+    if(name !== 'MyPage' || name !== 'index' ) Router.pushRoute(`/donations/${name}`)
+    this.setState({ activeItem: name })
   }
   render() {
     const { activeItem } = this.state;
+    console.log(this.props)
     return (
       <Menu pointing secondary style={{ marginTop: "30px"}}>
 
         <Menu.Item
           href="/"
-          name="DonationInChain"
-          active={activeItem === "DonationInChain"}
+          name="index"
+          active={activeItem === "index"}
           onClick={this.handleClick}
         >
             Donation In Chain
         </Menu.Item>
 
         <Menu.Item
-          href="/donations/inprocess"
-          name="InProcess"
-          active={activeItem === "InProcess"}
+          name="inprogress"
+          active={activeItem === "inprogress"}
           onClick={this.handleClick}
         >
-            In Process
+            In Progress
         </Menu.Item>
 
         <Menu.Item
-          href="/donations/completed"
+
           name="completed"
           active={activeItem === "completed"}
           onClick={this.handleClick}
