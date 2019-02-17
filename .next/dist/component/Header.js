@@ -51,64 +51,54 @@ var Header = function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: '' }, _this.handleClick = function (e, _ref2) {
-      var name = _ref2.name;
-
-      if (name !== 'MyPage' || name !== 'index') _routes.Router.pushRoute("/donations/" + name);
-      _this.setState({ activeItem: name });
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Header.__proto__ || (0, _getPrototypeOf2.default)(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = { activeItem: '' }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
   }
 
   (0, _createClass3.default)(Header, [{
     key: "render",
     value: function render() {
-      var activeItem = this.state.activeItem;
 
-      console.log(this.props);
-      return _react2.default.createElement(_semanticUiReact.Menu, { pointing: true, secondary: true, style: { marginTop: "30px" }, __source: {
+      return _react2.default.createElement(_semanticUiReact.Menu, { style: { marginTop: "30px" }, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        }
+      }, _react2.default.createElement(_routes.Link, { to: "/", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        }
+      }, _react2.default.createElement("a", { className: "item", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        }
+      }, "Donation In Chain")), _react2.default.createElement(_routes.Link, { to: "/donations/inprogress", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        }
+      }, _react2.default.createElement("a", { className: "item", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        }
+      }, "In Progress")), _react2.default.createElement(_routes.Link, { to: "/donations/completed", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        }
+      }, _react2.default.createElement("a", { className: "item", __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        }
+      }, "Complete")), _react2.default.createElement(_semanticUiReact.Menu.Menu, { position: "right", __source: {
           fileName: _jsxFileName,
           lineNumber: 17
         }
-      }, _react2.default.createElement(_semanticUiReact.Menu.Item, {
-        href: "/",
-        name: "index",
-        active: activeItem === "index",
-        onClick: this.handleClick,
-        __source: {
+      }, _react2.default.createElement(_routes.Link, { to: "/mypage", __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 17
         }
-      }, "Donation In Chain"), _react2.default.createElement(_semanticUiReact.Menu.Item, {
-        name: "inprogress",
-        active: activeItem === "inprogress",
-        onClick: this.handleClick,
-        __source: {
+      }, _react2.default.createElement("a", { className: "item", __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 17
         }
-      }, "In Progress"), _react2.default.createElement(_semanticUiReact.Menu.Item, {
-
-        name: "completed",
-        active: activeItem === "completed",
-        onClick: this.handleClick,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        }
-      }, "Completed"), _react2.default.createElement(_semanticUiReact.Menu.Menu, { position: "right", __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        }
-      }, _react2.default.createElement(_semanticUiReact.Menu.Item, {
-        name: "MyPage",
-        href: "/mypage",
-        active: activeItem === "MyPage",
-        onClick: this.handleClick,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        }
-      }, "My Page")));
+      }, "My Page"))));
     }
   }]);
 
@@ -116,4 +106,4 @@ var Header = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Header;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudC9IZWFkZXIuanMiXSwibmFtZXMiOlsiUmVhY3QiLCJNZW51IiwiU2VnbWVudCIsIkxpbmsiLCJSb3V0ZXIiLCJIZWFkZXIiLCJzdGF0ZSIsImFjdGl2ZUl0ZW0iLCJoYW5kbGVDbGljayIsImUiLCJuYW1lIiwicHVzaFJvdXRlIiwic2V0U3RhdGUiLCJjb25zb2xlIiwibG9nIiwicHJvcHMiLCJtYXJnaW5Ub3AiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBTzs7OztBQUNQLEFBQVMsQUFBTTs7QUFDZixBQUFRLEFBQU0sQUFBYTs7Ozs7OztJLEFBR047Ozs7Ozs7Ozs7Ozs7OzRNLEFBQ25CLFFBQVEsRUFBRSxZLEFBQUYsQUFBYyxZQUV0QixBLGNBQWMsVUFBQSxBQUFDLFVBQWdCO1VBQVgsQUFBVyxhQUFYLEFBQVcsQUFDN0I7O1VBQUcsU0FBQSxBQUFTLFlBQVksU0FBeEIsQUFBaUMsU0FBVSxlQUFBLEFBQU8sMEJBQVAsQUFBK0IsQUFDMUU7WUFBQSxBQUFLLFNBQVMsRUFBRSxZQUFoQixBQUFjLEFBQWMsQUFDN0I7QTs7Ozs7NkJBQ1E7VUFBQSxBQUNDLGFBQWUsS0FEaEIsQUFDcUIsTUFEckIsQUFDQyxBQUNSOztjQUFBLEFBQVEsSUFBSSxLQUFaLEFBQWlCLEFBQ2pCOzZCQUNFLEFBQUMsdUNBQUssVUFBTixNQUFlLFdBQWYsTUFBeUIsT0FBTyxFQUFFLFdBQWxDLEFBQWdDLEFBQWE7b0JBQTdDO3NCQUFBLEFBRUU7QUFGRjtPQUFBLGtCQUVHLGNBQUQsc0JBQUEsQUFBTTtjQUFOLEFBQ08sQUFDTDtjQUZGLEFBRU8sQUFDTDtnQkFBUSxlQUhWLEFBR3lCLEFBQ3ZCO2lCQUFTLEtBSlgsQUFJZ0I7O29CQUpoQjtzQkFBQTtBQUFBO0FBQ0UsU0FISixBQUVFLEFBU0Esc0NBQUMsY0FBRCxzQkFBQSxBQUFNO2NBQU4sQUFDTyxBQUNMO2dCQUFRLGVBRlYsQUFFeUIsQUFDdkI7aUJBQVMsS0FIWCxBQUdnQjs7b0JBSGhCO3NCQUFBO0FBQUE7QUFDRSxTQVpKLEFBV0UsQUFRQSxnQ0FBQyxjQUFELHNCQUFBLEFBQU07O2NBQU4sQUFFTyxBQUNMO2dCQUFRLGVBSFYsQUFHeUIsQUFDdkI7aUJBQVMsS0FKWCxBQUlnQjs7b0JBSmhCO3NCQUFBO0FBQUE7QUFFRSxTQXJCSixBQW1CRSxBQVNBLDhCQUFDLGNBQUQsc0JBQUEsQUFBTSxRQUFLLFVBQVgsQUFBb0I7b0JBQXBCO3NCQUFBLEFBQ0E7QUFEQTt5QkFDQyxjQUFELHNCQUFBLEFBQU07Y0FBTixBQUNPLEFBQ0w7Y0FGRixBQUVPLEFBQ0w7Z0JBQVEsZUFIVixBQUd5QixBQUN2QjtpQkFBUyxLQUpYLEFBSWdCOztvQkFKaEI7c0JBQUE7QUFBQTtBQUNFLFNBL0JOLEFBQ0UsQUE0QkUsQUFDQSxBQWFMOzs7OztFQXJEaUMsZ0JBQU0sQTs7a0JBQXJCLEEiLCJmaWxlIjoiSGVhZGVyLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9ldW5qaXNvbmcvRG9jdW1lbnRzL3Byb2plY3QvZG9uYXRpb24taW4tY2hhaW4ifQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudC9IZWFkZXIuanMiXSwibmFtZXMiOlsiUmVhY3QiLCJNZW51IiwiTGluayIsIkhlYWRlciIsInN0YXRlIiwiYWN0aXZlSXRlbSIsIm1hcmdpblRvcCIsIkNvbXBvbmVudCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPOzs7O0FBQ1AsQUFBUzs7QUFDVCxBQUFRLEFBQVc7Ozs7Ozs7SUFHRSxBOzs7Ozs7Ozs7Ozs7Ozs0TUFDbkIsQSxRQUFRLEVBQUUsWSxBQUFGLEFBQWM7Ozs7OzZCQUViLEFBR1A7OzZCQUNFLEFBQUMsdUNBQU0sT0FBTyxFQUFFLFdBQWhCLEFBQWMsQUFBYTtvQkFBM0I7c0JBQUEsQUFDRTtBQURGO09BQUEsa0JBQ0UsQUFBQyw4QkFBSyxJQUFOLEFBQVM7b0JBQVQ7c0JBQUEsQUFBYTtBQUFiO3lCQUFhLGNBQUEsT0FBRyxXQUFILEFBQWE7b0JBQWI7c0JBQUE7QUFBQTtTQURmLEFBQ0UsQUFBYSxBQUNiLHVDQUFBLEFBQUMsOEJBQUssSUFBTixBQUFTO29CQUFUO3NCQUFBLEFBQWlDO0FBQWpDO3lCQUFpQyxjQUFBLE9BQUcsV0FBSCxBQUFhO29CQUFiO3NCQUFBO0FBQUE7U0FGbkMsQUFFRSxBQUFpQyxBQUNqQyxpQ0FBQSxBQUFDLDhCQUFLLElBQU4sQUFBUztvQkFBVDtzQkFBQSxBQUFnQztBQUFoQzt5QkFBZ0MsY0FBQSxPQUFHLFdBQUgsQUFBYTtvQkFBYjtzQkFBQTtBQUFBO1NBSGxDLEFBR0UsQUFBZ0MsQUFDaEMsOEJBQUMsY0FBRCxzQkFBQSxBQUFNLFFBQUssVUFBWCxBQUFvQjtvQkFBcEI7c0JBQUEsQUFBNEI7QUFBNUI7eUJBQTRCLEFBQUMsOEJBQUssSUFBTixBQUFTO29CQUFUO3NCQUFBLEFBQW1CO0FBQW5CO3lCQUFtQixjQUFBLE9BQUcsV0FBSCxBQUFhO29CQUFiO3NCQUFBO0FBQUE7U0FMbkQsQUFDRSxBQUlFLEFBQTRCLEFBQW1CLEFBR3BEOzs7OztFQWRpQyxnQkFBTSxBOztrQkFBckIsQSIsImZpbGUiOiJIZWFkZXIuanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL2V1bmppc29uZy9Eb2N1bWVudHMvcHJvamVjdC9kb25hdGlvbi1pbi1jaGFpbiJ9
